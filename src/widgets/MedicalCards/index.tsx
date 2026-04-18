@@ -1,0 +1,1 @@
+export {MedicalCa8rds} from './ui/MedicalCards';
