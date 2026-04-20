@@ -7,7 +7,7 @@ import userIcon from "@/shared/assets/logo/header/Vector.svg";
 
 const navItems = [
   { label: "Главная", href: "/" },
-  { label: "Врачи", href: "/doctors" },
+  { label: "Врачи", href: "/Doctors" },
   { label: "Клиники", href: "/clinics" },
   { label: "Процедуры", href: "/procedures" },
 ];
