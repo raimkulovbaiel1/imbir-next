@@ -108,9 +108,7 @@ export default function DoctorFilters() {
         </button>
       </div>
 
-      {/* Десктопная версия */}
       <div className="hidden flex-wrap items-start gap-5 overflow-visible lg:flex">
-        {/* Специализация */}
         <div className="relative mt-5 w-[277px]">
           <button
             onClick={() => toggle("spec")}
@@ -144,7 +142,6 @@ export default function DoctorFilters() {
           )}
         </div>
 
-        {/* Местоположение */}
         <div className="relative mt-5 w-[277px]">
           <button
             onClick={() => toggle("location")}
@@ -178,7 +175,6 @@ export default function DoctorFilters() {
           )}
         </div>
 
-        {/* Оценка */}
         <div className="relative mt-5 w-[277px]">
           <button
             onClick={() => toggle("rating")}
@@ -228,13 +224,11 @@ export default function DoctorFilters() {
           )}
         </div>
 
-        {/* Картинка */}
         <div className="mt-5 hidden h-[90px] w-[97px] lg:block">
           <img src={doc.src} alt="doctor" className="h-full w-full object-contain" />
         </div>
       </div>
 
-      {/* Мобильное окно: Специализация */}
       {open.spec && (
         <div className="fixed inset-0 z-[1000] flex items-end bg-black/50 lg:hidden">
           <div className="max-h-[70vh] w-full overflow-y-auto rounded-t-2xl bg-white p-5">
@@ -270,7 +264,6 @@ export default function DoctorFilters() {
         </div>
       )}
 
-      {/* Мобильное окно: Местоположение */}
       {open.location && (
         <div className="fixed inset-0 z-[1000] flex items-end bg-black/50 lg:hidden">
           <div className="max-h-[70vh] w-full overflow-y-auto rounded-t-2xl bg-white p-5">
@@ -306,7 +299,6 @@ export default function DoctorFilters() {
         </div>
       )}
 
-      {/* Мобильное окно: Оценка */}
       {open.rating && (
         <div className="fixed inset-0 z-[1000] flex items-end bg-black/50 lg:hidden">
           <div className="max-h-[70vh] w-full  rounded-t-2xl bg-white p-5">
