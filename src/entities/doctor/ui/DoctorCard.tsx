@@ -11,7 +11,6 @@ export default function DoctorCard({
 }: DoctorCardProps) {
   return (
     <article className="w-[302px]">
-      {/* Картинка */}
       <div className="relative w-[302px] h-[302px] overflow-hidden rounded-[18px]">
         <img
           src={image}
@@ -25,12 +24,10 @@ export default function DoctorCard({
             Лечить не болезнь, а человека.
           </div>
 
-          {/* хвостик */}
           <div className="w-0 h-0 border-t-[12px] border-b-[12px] border-l-[12px] border-t-transparent border-b-transparent border-l-[#0C2647]" />
         </div>
       </div>
 
-      {/* Текст */}
       <h3 className="mt-3 text-[18px] font-bold text-[#19335A]">
         {name}
       </h3>
