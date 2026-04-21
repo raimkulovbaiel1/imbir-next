@@ -19,9 +19,7 @@ export default function ServiceCard({
   return (
     <article className="flex flex-col gap-4 rounded-[18px] bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
 
-      {/* ЛЕВАЯ ЧАСТЬ */}
       <div className="flex gap-4">
-        {/* Картинка */}
         <div className="relative h-[90px] w-[90px] shrink-0 overflow-hidden rounded-[16px]   sm:h-[95px] sm:w-[95px]   lg:h-[125px] lg:w-[125px] lg:rounded-[20px]">
           <img
             src={procedureImg.src}
@@ -29,14 +27,12 @@ export default function ServiceCard({
             className="h-full w-full object-cover"
           />
 
-          {/* Рейтинг */}
           <div className="absolute bottom-1 left-1 flex items-center gap-1 rounded-full bg-white px-2 py-[2px] text-[12px] font-semibold text-[#0C2647] shadow">
             <span className="text-yellow-400">★</span>
             <span>{rating}</span>
           </div>
         </div>
 
-        {/* Текст */}
         <div className="flex flex-col justify-center">
           <h3 className="text-[18px] font-monserrat font-bold text-[#0C2647] sm:text-[22px] lg:text-[30px]">
             {title}
@@ -58,7 +54,6 @@ export default function ServiceCard({
 
       {/* ПРАВАЯ ЧАСТЬ */}
       <div className="flex items-center justify-between gap-4 sm:justify-end sm:gap-8 lg:gap-[50vh]">
-        {/* График */}
         <div className="text-[12px]  text-[#0C2647] sm:text-[16px]">
           <p className="mb-1 lg:text-[16px] font-monserrat">График работы:</p>
           <p className="font-monserrat font-bold">Пн, Ср, Пт 10:30 - 16:30</p>
