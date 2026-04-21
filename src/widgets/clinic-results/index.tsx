@@ -1,0 +1,1 @@
+export {ClinicResults} from './ui/ClinicResults'

@@ -42,7 +42,7 @@ const doctors = [
 
 export default function DoctorResults() {
   return (
-    <div className="mt-10 grid grid-cols-1 justify-items-center gap-x-[30px] gap-y-[40px] sm:grid-cols-2 lg:grid-cols-3">
+    <div className="mt-10 grid grid-cols-2 justify-items-center gap-x-[30px] gap-y-[40px] sm:grid-cols-2 lg:grid-cols-3">
       {doctors.map((doctor) => (
         <DoctorCard
           key={doctor.id}

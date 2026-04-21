@@ -10,28 +10,27 @@ export default function DoctorCard({
   profession,
 }: DoctorCardProps) {
   return (
-    <article className="w-[302px]">
-      <div className="relative w-[302px] h-[302px] overflow-hidden rounded-[18px]">
+    <article className="w-full max-w-[302px]">
+      <div className="relative aspect-square w-full overflow-hidden rounded-[18px]">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
 
-        {/* Плашка с текстом */}
         <div className="absolute bottom-4 left-0 flex items-center">
-          <div className="bg-gradient-to-r from-[#219EBC] to-[#0C2647] text-white text-[12px] px-4 py-2">
+          <div className="bg-gradient-to-r from-[#219EBC] to-[#0C2647] px-3 py-2 text-[10px] text-white sm:px-4 sm:text-[12px]">
             Лечить не болезнь, а человека.
           </div>
 
-          <div className="w-0 h-0 border-t-[12px] border-b-[12px] border-l-[12px] border-t-transparent border-b-transparent border-l-[#0C2647]" />
+          <div className="h-0 w-0 border-b-[12px] border-l-[12px] border-t-[12px] border-b-transparent border-l-[#0C2647] border-t-transparent" />
         </div>
       </div>
 
-      <h3 className="mt-3 text-[18px] font-bold text-[#19335A]">
+      <h3 className="mt-3 text-[16px] font-bold text-[#19335A] sm:text-[18px]">
         {name}
       </h3>
-      <p className="text-[16px] text-[#19335A]">
+      <p className="text-[14px] text-[#19335A] sm:text-[16px]">
         {profession}
       </p>
     </article>
