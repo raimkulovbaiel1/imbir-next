@@ -38,8 +38,8 @@ export default function DoctorFilters() {
   const [selectedSpecs, setSelectedSpecs] = useState<string[]>([]);
   const [selectedDistricts, setSelectedDistricts] = useState<string[]>([]);
   const [ratingRange, setRatingRange] = useState({
-    from: "",
-    to: "5",
+    from: "0",
+    to: "0",
   });
 
   const toggle = (key: keyof typeof open) => {
