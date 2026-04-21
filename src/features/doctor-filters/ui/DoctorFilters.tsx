@@ -74,7 +74,7 @@ export default function DoctorFilters() {
 
   return (
     <div className="mt-5">
-      {/* Мобильная версия */}
+      /* Мобильная версия */
       <div className="mb-4 flex gap-2 overflow-x-auto pb-2 lg:hidden">
         <button
           onClick={() => toggle("spec")}
