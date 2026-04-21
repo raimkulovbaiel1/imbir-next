@@ -78,8 +78,8 @@ export default function ProceduresFilters() {
         <button
           onClick={() => toggle("procedure")}
           className={`flex-shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all ${open.procedure
-              ? "border-[#f7a300] bg-[#f7a300] text-white"
-              : "border-gray-300 bg-white text-gray-700"
+            ? "border-[#f7a300] bg-[#f7a300] text-white"
+            : "border-gray-300 bg-white text-gray-700"
             }`}
         >
           Процедуры
@@ -88,8 +88,8 @@ export default function ProceduresFilters() {
         <button
           onClick={() => toggle("clinic")}
           className={`flex-shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all ${open.clinic
-              ? "border-[#f7a300] bg-[#f7a300] text-white"
-              : "border-gray-300 bg-white text-gray-700"
+            ? "border-[#f7a300] bg-[#f7a300] text-white"
+            : "border-gray-300 bg-white text-gray-700"
             }`}
         >
           Клиники
@@ -98,8 +98,8 @@ export default function ProceduresFilters() {
         <button
           onClick={() => toggle("rating")}
           className={`flex-shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all ${open.rating
-              ? "border-[#f7a300] bg-[#f7a300] text-white"
-              : "border-gray-300 bg-white text-gray-700"
+            ? "border-[#f7a300] bg-[#f7a300] text-white"
+            : "border-gray-300 bg-white text-gray-700"
             }`}
         >
           Оценка
@@ -108,8 +108,8 @@ export default function ProceduresFilters() {
         <button
           onClick={() => toggle("location")}
           className={`flex-shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all ${open.location
-              ? "border-[#f7a300] bg-[#f7a300] text-white"
-              : "border-gray-300 bg-white text-gray-700"
+            ? "border-[#f7a300] bg-[#f7a300] text-white"
+            : "border-gray-300 bg-white text-gray-700"
             }`}
         >
           Местоположение
@@ -118,8 +118,8 @@ export default function ProceduresFilters() {
         <button
           onClick={() => toggle("price")}
           className={`flex-shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all ${open.price
-              ? "border-[#f7a300] bg-[#f7a300] text-white"
-              : "border-gray-300 bg-white text-gray-700"
+            ? "border-[#f7a300] bg-[#f7a300] text-white"
+            : "border-gray-300 bg-white text-gray-700"
             }`}
         >
           Стоимость
@@ -222,6 +222,7 @@ export default function ProceduresFilters() {
             </div>
           )}
         </div>
+
 
         <div className="relative w-full mt-4 max-w-[220px]">
           <button
