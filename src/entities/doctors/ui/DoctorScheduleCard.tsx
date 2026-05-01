@@ -1,5 +1,7 @@
-import { Clock3, XCircle } from "lucide-react";
 
+import clock from "@/shared/assets/logo/profile-doctor/clock.svg"
+import cross from "@/shared/assets/logo/profile-doctor/cross.svg" 
+import schedule from "@/shared/assets/logo/profile-doctor/schedule.svg"
 type DoctorScheduleCardProps = {
   title: string;
   buttonText: string;
@@ -17,19 +19,19 @@ export default function DoctorScheduleCard({
 
       <div className="mt-5 space-y-3 text-[16px] text-[#0C2647]">
         <div className="flex items-start gap-2">
-          <Clock3 size={18} className="mt-0.5 text-[#ff7a00]" />
+          <img src={clock.src}  className="w-3.75 h-3.75" />
           <p>Понедельник - Пятница 10:00 до 18:00</p>
         </div>
 
         <div className="flex items-start gap-2">
-          <XCircle size={18} className="mt-0.5 text-red-500" />
+          <img src={cross.src} alt="logo" className="w-3.75 h-3.75" />
           <p>Выходной: Суббота - Воскресенье</p>
         </div>
       </div>
 
-      <button className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-[15px] font-semibold text-[#0C2647] shadow-sm">
-        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
-          +
+      <button className="mt-5 flex w-full items-center gap-2 rounded-full bg-white px-4 py-3 text-[17px] font-semibold text-[#0C2647] shadow-sm">
+        <span className="flex h-6 w-6   rounded-full  text-white">
+         <img src={schedule.src} alt="logo"/>
         </span>
         {buttonText}
       </button>
