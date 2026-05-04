@@ -51,7 +51,7 @@ export default function ReviewsSection() {
                                         {/* АВАТАР */}
                                         <div className="w-[65px] h-[66px] rounded-full overflow-hidden shrink-0">
                                             <img
-                                                src={avatar.src}
+                                                src={avatar.src}    
                                                 alt={review.name}
                                                 className="w-full h-full object-cover"
                                             />
