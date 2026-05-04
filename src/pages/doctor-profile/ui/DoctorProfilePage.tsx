@@ -2,6 +2,7 @@
 
 import DoctorLeftPanel from "@/widgets/doctor-profile/left-panel/ui/DoctorLeftPanel";
 import DoctorRightPanel from "@/widgets/doctor-profile/right-panel/ui/DoctorRightPanel";
+import Reviews from "@/widgets/Reviews/ui/Reviews";
 
 export default function DoctorProfilePage() {
   return (
@@ -9,6 +10,9 @@ export default function DoctorProfilePage() {
       <div className="mx-auto flex w-full max-w-[1220px] flex-col gap-6 px-4 lg:flex-row lg:items-start lg:gap-6">
         <DoctorLeftPanel />
         <DoctorRightPanel />
+      </div>
+       <div className="mx-auto w-full max-w-[1220px] px-4">
+        <Reviews />
       </div>
     </section>
   );
