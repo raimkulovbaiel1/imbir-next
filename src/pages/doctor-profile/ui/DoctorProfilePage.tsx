@@ -3,7 +3,7 @@
 import DoctorLeftPanel from "@/widgets/doctor-profile/left-panel/ui/DoctorLeftPanel";
 import DoctorRightPanel from "@/widgets/doctor-profile/right-panel/ui/DoctorRightPanel";
 import Reviews from "@/widgets/Reviews/ui/Reviews";
-
+import  DoctorVideo  from "@/widgets/DoctorVideo/ui/DoctorVideo";
 export default function DoctorProfilePage() {
   return (
     <section className="min-h-screen bg-[#efefef] py-6 lg:py-10">
@@ -12,7 +12,8 @@ export default function DoctorProfilePage() {
         <DoctorRightPanel />
       </div>
        <div className="mx-auto w-full max-w-[1220px] px-4">
-        <Reviews />
+        <Reviews /> 
+        <DoctorVideo />
       </div>
     </section>
   );

@@ -1,0 +1,1 @@
+export {DoctorVideo} from './ui/DoctorVideo';
