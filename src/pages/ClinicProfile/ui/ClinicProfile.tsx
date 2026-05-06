@@ -1,5 +1,5 @@
 import ClinicProfile from "@/widgets/ClinicProfile/ui/ClinicProfile";
-import { ClinicServices } from "@/widgets/ClinicServices/ui/ClinicServices";
+import  ClinicServices  from "@/widgets/ClinicServices/ui/ClinicServices";
 
 export const ClinicProfilePage = () => {
   return (
