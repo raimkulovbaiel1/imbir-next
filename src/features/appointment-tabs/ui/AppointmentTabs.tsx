@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import AppointmentCard from "@/entities/appointment/ui/AppointmentCard";
 
 const data = [1, 2, 3];
@@ -33,24 +34,25 @@ export default function AppointmentTabs() {
           История записей
         </button>
 
-        <button
-          onClick={() => setTab("saved")}
+        <Link
+          href="/ProfileTabs"
           className={`
-      min-w-[160px] md:w-[270px]
-      h-[48px] md:h-[65px]
-      rounded-t-[16px]
-      font-semibold
-      text-[14px] md:text-[22px]
-      transition
-      flex-shrink-0
-      ${tab === "saved"
+    min-w-[160px] md:w-[270px]
+    h-[48px] md:h-[65px]
+    rounded-t-[16px]
+    font-semibold
+    text-[14px] md:text-[22px]
+    transition
+    flex-shrink-0
+    flex items-center justify-center
+    ${tab === "saved"
               ? "bg-[#0C2647] text-white z-10"
               : "bg-[#BFE0F5] text-[#0C2647]"
             }
-    `}
+  `}
         >
           Сохраненное
-        </button>
+        </Link>
 
         <button
           onClick={() => setTab("reviews")}
