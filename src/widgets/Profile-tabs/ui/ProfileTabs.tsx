@@ -1,17 +1,18 @@
 "use client";
 
 import clsx from "clsx";
-import Link from "next/link";
 import { useState } from "react";
 
-//import AppointmentCard from "@/entities/appointmenttab/ui/AppointmentCard";
 import SavedCard from "@/entities/saved-card/ui/SavedCard";
-import UserInfo from "@/entities/user/ui/UserInfo"; 
+import UserInfo from "@/entities/user/ui/UserInfo";
 import UserStatus from "@/widgets/user-status/ui/user-status";
+import ReviewCard from "@/entities/review-card/ui/ReviewCard";
+import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
 
-const appointments = [1, 2, 3];
+
 const savedCards = [1, 2, 3, 4, 5, 6];
-
+const reviews = [1, 2, 3];
+  
 const tabClass = (active: boolean) =>
   clsx(
     `
@@ -44,22 +45,20 @@ const tabClass = (active: boolean) =>
   );
 
 export default function ProfileTabs() {
-  const [tab, setTab] = useState("saved");
+  const [tab, setTab] = useState("history");
 
   return (
     <div className="w-full overflow-hidden">
-
       <UserInfo />
-
       {/* TABS */}
-      <div className="mt-6 flex gap-2 overflow-x-auto scrollbar-hide pb-0">
-        <Link
-          href="/Profile"
+      <div className="mt-6 flex gap-2 overflow-x-auto scrollbar-hide">
+        <button
+          type="button"
+          onClick={() => setTab("history")}
           className={tabClass(tab === "history")}
         >
           История записей
-        </Link>
-
+        </button>
         <button
           type="button"
           onClick={() => setTab("saved")}
@@ -79,101 +78,62 @@ export default function ProfileTabs() {
 
       {/* MAIN BLOCK */}
       <div
-        className="
-          rounded-[18px]
-          md:rounded-[24px]
-          rounded-tl-none
-          bg-gradient-to-b
-          from-[#0C2647]
-          to-[#2AA7B8]
-          p-3
-          sm:p-4
-          md:p-5
-        "
-      >
-
+        className=" rounded-[18px] md:rounded-[24px] bg-gradient-to-b  from-[#0C2647] to-[#2AA7B8] p-3 sm:p-4  md:p-5 " >
         {/* SEARCH */}
-        <div className="relative mb-4">
+        <div className="relative mb-5">
           <input
             placeholder="Введите свой запрос"
-            className="
-              w-full
-              h-[40px]
-              md:h-[44px]
-              rounded-full
-              bg-[#F4F6F9]
-              px-4
-              md:px-5
-              pr-12
-              outline-none
-              text-sm
-              md:text-base
-            "
-          />
-
+            className="  w-full  h-[40px]  md:h-[44px]  rounded-full bg-[#F4F6F9] px-4 md:px-5   pr-12 outline-none text-sm  md:text-base "></input>
           <span className="absolute right-4 top-1/2 -translate-y-1/2">
             🔍
           </span>
         </div>
 
+        {/* TOP MENU */}
+        {(tab === "saved" || tab === "reviews") && (
+          <div
+            className=" mb-5 flex items-center justify-between  gap-2  text-white font-semibold text-[12px] sm:text-[16px]  md:text-[30px]" >
+            <span className="flex-1 text-center">Клиники</span>
+            <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
+            <span className="flex-1 text-center">Врачи</span>
+            <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
+            <span className="flex-1 text-center">Процедуры</span>
+          </div>
+        )}
+        {/* HISTORY */}
+        {tab === "history" && (
+          <div className="flex flex-col gap-4">
+            <Appointment />
+          </div>
+        )}
+
         {/* SAVED */}
         {tab === "saved" && (
-          <div>
-
-            {/* TOP MENU */}
-            <div
-              className="
-                mb-5
-                flex
-                items-center
-                justify-between
-                gap-2
-
-                text-white
-                font-semibold
-
-                text-[12px]
-                sm:text-[16px]
-                md:text-[30px]
-              "
-            >
-              <span className="flex-1 text-center">Клиники</span>
-
-              <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
-
-              <span className="flex-1 text-center">Врачи</span>
-
-              <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
-
-              <span className="flex-1 text-center">Процедуры</span>
-            </div>
-
-            {/* сарточки */}
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {savedCards.map((item) => (
-                <SavedCard key={item} />
-              ))}
-            </div>
-
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+            {savedCards.map((item) => (
+              <SavedCard key={item} />
+            ))}
           </div>
         )}
 
         {/* REVIEWS */}
         {tab === "reviews" && (
-          <div
-            className="
-              py-10
-              text-center
-              text-[18px]
-              md:text-[22px]
-              text-white
-            "
-          >
-            Пока нет отзывов
+          <div className="flex flex-col gap-4">
+            {reviews.map((item) => (
+              <ReviewCard
+                key={item}
+                date="02.10.2024"
+                doctor="Сыдыкбекова Асель Келдибековна"
+                clinic="MedCenter"
+                rating="5.0"
+                text="Рекомендую всем, кто ищет квалифицированного и отзывчивого специалиста!"
+              />
+            ))}
           </div>
         )}
-      </div>  
-      <UserStatus/>
+      </div>
+      <UserStatus />
     </div>
   );
 }
+
