@@ -7,7 +7,6 @@ export default function SavedCard() {
   return (
     <div className="w-full min-w-0">
 
-      {/* IMAGE */}
       <div className="relative w-full h-[220px] sm:h-[260px] md:h-[302px] overflow-hidden  ">
         <Image
           src={clinic}
@@ -29,7 +28,6 @@ export default function SavedCard() {
         </div>
       </div>
 
-      {/* TEXT */}
       <div className="mt-0 px-7">
         <h3 className="text-white font-monserrat font-bold text-[18px] sm:text-[22px] md:text-[30px]">
           MedCenter
