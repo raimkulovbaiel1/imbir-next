@@ -16,10 +16,8 @@ export default function AppointmentTabs() {
       <div
         className=" bg-gradient-to-b   from-[#0C2647]  to-[#2AA7B8]  rounded-[20px] rounded-tl-none  p-5 -mt-1">
        
-        {/* TOP */}
         <div
           className=" flex flex-row items-center justify-around  text-white font-semibold  mb-6">
-          {/* UPCOMING */}
           <button
             onClick={() => setActiveTab("upcoming")}
             className={`text-[14px] md:text-[30px]  text-center  transition
@@ -35,7 +33,6 @@ export default function AppointmentTabs() {
 
           <div className="w-[1px] md:w-[2px] h-[24px] md:h-[40px] bg-white/50 mx-3 md:mx-6" />
 
-          {/* PAST */}
           <button
             onClick={() => setActiveTab("past")}
             className={` text-[14px] md:text-[30px] text-center transition
@@ -46,12 +43,11 @@ export default function AppointmentTabs() {
               }
             `}
           >
-            Прошедшая
+            Прошедшая запись
           </button>
 
         </div>
 
-        {/* UPCOMING LIST */}
         {activeTab === "upcoming" && (
           <div className="flex flex-col gap-3">
             {data.map((_, i) => (
@@ -66,7 +62,6 @@ export default function AppointmentTabs() {
           </div>
         )}
 
-        {/* PAST LIST */}
         {activeTab === "past" && (
           <div className="flex flex-col gap-3">
             {data.map((_, i) => (
