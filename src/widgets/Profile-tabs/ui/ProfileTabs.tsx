@@ -126,7 +126,6 @@ export default function ProfileTabs() {
             <Appointment />
           </div>
         )}
-        {/* SAVED */}
         {tab === "saved" && (
           <>
             {savedTab === "clinics" && (
@@ -152,7 +151,6 @@ export default function ProfileTabs() {
             )}
           </>
         )}
-        {/* REVIEWS */}
         {tab === "reviews" && (
           <div className="flex flex-col gap-4">
             {reviews.map((item) => (
