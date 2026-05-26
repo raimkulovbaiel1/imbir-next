@@ -8,6 +8,7 @@ import UserStatus from "@/widgets/user-status/ui/user-status";
 import ReviewCard from "@/entities/review-card/ui/ReviewCard";
 import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
 import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
+import {Crocedural} from "@/entities/Crocedural/ui/Crocedural"
 
 const savedCards = [1, 2, 3, 4, 5, 6];
 const reviews = [1, 2, 3];
@@ -40,6 +41,7 @@ const tabClass = (active: boolean) =>
 export default function ProfileTabs() {
   const [tab, setTab] = useState("history");
   const [savedTab, setSavedTab] = useState("clinics");
+ 
   return (
     <div className="w-full overflow-hidden">
       <UserInfo />
@@ -139,7 +141,7 @@ export default function ProfileTabs() {
             {savedTab === "procedures" && (
               <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
                 {savedCards.map((item) => (
-                  <SavedCard key={item} />
+                  <Crocedural key={item} />
                 ))}
               </div>
             )}
