@@ -8,17 +8,11 @@ import UserStatus from "@/widgets/user-status/ui/user-status";
 import ReviewCard from "@/entities/review-card/ui/ReviewCard";
 import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
 import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
-<<<<<<< HEAD
 
 
 const savedCards = [1, 2, 3, 4, 5, 6];
 const reviews = [1, 2, 3];
 
-=======
-
-const savedCards = [1, 2, 3, 4, 5, 6];
-const reviews = [1, 2, 3];
->>>>>>> ProfileTabs
 const tabClass = (active: boolean) =>
   clsx(
     `
