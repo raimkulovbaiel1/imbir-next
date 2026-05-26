@@ -1,37 +1,31 @@
-"use client";
 
+"use client";
 import clsx from "clsx";
 import { useState } from "react";
-
 import SavedCard from "@/entities/saved-card/ui/SavedCard";
 import UserInfo from "@/entities/user/ui/UserInfo";
 import UserStatus from "@/widgets/user-status/ui/user-status";
 import ReviewCard from "@/entities/review-card/ui/ReviewCard";
 import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
-
+import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
 
 const savedCards = [1, 2, 3, 4, 5, 6];
 const reviews = [1, 2, 3];
-  
 const tabClass = (active: boolean) =>
   clsx(
     `
     min-w-[140px]
     sm:min-w-[180px]
     md:w-[260px]
-
     h-[45px]
     sm:h-[52px]
     md:h-[60px]
-
     rounded-t-[14px]
     md:rounded-t-[18px]
-
     font-semibold
     text-[13px]
     sm:text-[16px]
     md:text-[22px]
-
     transition
     flex
     items-center
@@ -43,10 +37,9 @@ const tabClass = (active: boolean) =>
       ? "bg-[#0C2647] text-white"
       : "bg-[#CAE9FF] text-[#0C2647]"
   );
-
 export default function ProfileTabs() {
   const [tab, setTab] = useState("history");
-
+  const [savedTab, setSavedTab] = useState("clinics");
   return (
     <div className="w-full overflow-hidden">
       <UserInfo />
@@ -66,7 +59,6 @@ export default function ProfileTabs() {
         >
           Сохраненное
         </button>
-
         <button
           type="button"
           onClick={() => setTab("reviews")}
@@ -75,7 +67,6 @@ export default function ProfileTabs() {
           Отзывы
         </button>
       </div>
-
       {/* MAIN BLOCK */}
       <div
         className=" rounded-[18px] md:rounded-[24px] bg-gradient-to-b  from-[#0C2647] to-[#2AA7B8] p-3 sm:p-4  md:p-5 " >
@@ -88,16 +79,39 @@ export default function ProfileTabs() {
             🔍
           </span>
         </div>
-
         {/* TOP MENU */}
         {(tab === "saved" || tab === "reviews") && (
           <div
-            className=" mb-5 flex items-center justify-between  gap-2  text-white font-semibold text-[12px] sm:text-[16px]  md:text-[30px]" >
-            <span className="flex-1 text-center">Клиники</span>
+            className="mb-5 flex items-center justify-between  gap-2 font-semibold  text-[12px] sm:text-[16px] md:text-[30px]">
+            <button
+              onClick={() => setSavedTab("clinics")}
+              className={clsx(
+                "flex-1 text-center transition text-[#CAE9FF]",
+                savedTab === "clinics" && "text-white"
+              )}
+            >
+              Клиники
+            </button>
             <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
-            <span className="flex-1 text-center">Врачи</span>
+            <button
+              onClick={() => setSavedTab("doctors")}
+              className={clsx(
+                "flex-1 text-center transition text-[#CAE9FF]",
+                savedTab === "doctors" && "text-white"
+              )}
+            >
+              Врачи
+            </button>
             <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
-            <span className="flex-1 text-center">Процедуры</span>
+            <button
+              onClick={() => setSavedTab("procedures")}
+              className={clsx(
+                "flex-1 text-center transition text-[#CAE9FF]",
+                savedTab === "procedures" && "text-white"
+              )}
+            >
+              Процедуры
+            </button>
           </div>
         )}
         {/* HISTORY */}
@@ -106,16 +120,32 @@ export default function ProfileTabs() {
             <Appointment />
           </div>
         )}
-
         {/* SAVED */}
         {tab === "saved" && (
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-            {savedCards.map((item) => (
-              <SavedCard key={item} />
-            ))}
-          </div>
+          <>
+            {savedTab === "clinics" && (
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+                {savedCards.map((item) => (
+                  <SavedCard key={item} />
+                ))}
+              </div>
+            )}
+            {savedTab === "doctors" && (
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+                {savedCards.map((item) => (
+                  <ProcedureDoc key={item} />
+                ))}
+              </div>
+            )}
+            {savedTab === "procedures" && (
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+                {savedCards.map((item) => (
+                  <SavedCard key={item} />
+                ))}
+              </div>
+            )}
+          </>
         )}
-
         {/* REVIEWS */}
         {tab === "reviews" && (
           <div className="flex flex-col gap-4">
