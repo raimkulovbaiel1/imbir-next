@@ -7,8 +7,8 @@ import UserInfo from "@/entities/user/ui/UserInfo";
 import UserStatus from "@/widgets/user-status/ui/user-status";
 import ReviewCard from "@/entities/review-card/ui/ReviewCard";
 import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
-import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc" 
-import {Crocedural} from "@/entities/Crocedural/ui/Crocedural"
+import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
+import { Crocedural } from "@/entities/Crocedural/ui/Crocedural"
 
 
 const savedCards = [1, 2, 3, 4, 5, 6];
@@ -42,8 +42,8 @@ const tabClass = (active: boolean) =>
   );
 export default function ProfileTabs() {
   const [tab, setTab] = useState("history");
-  const [savedTab, setSavedTab] = useState("clinics"); 
- 
+  const [savedTab, setSavedTab] = useState("clinics");
+
   return (
     <div className="w-full overflow-hidden">
       <UserInfo />
@@ -145,9 +145,14 @@ export default function ProfileTabs() {
               </div>
             )}
             {savedTab === "procedures" && (
-              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+              <div className="flex flex-col gap-4">
                 {savedCards.map((item) => (
-                  <Crocedural key={item} />
+                  <Crocedural
+                    key={item}
+                    title="УЗИ"
+                    category="Кардиология"
+                    price="1700 сом"
+                  />
                 ))}
               </div>
             )}
