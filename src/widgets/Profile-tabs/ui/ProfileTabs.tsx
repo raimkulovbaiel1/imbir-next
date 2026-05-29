@@ -8,10 +8,12 @@ import UserStatus from "@/widgets/user-status/ui/user-status";
 import ReviewCard from "@/entities/review-card/ui/ReviewCard";
 import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
 import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
-import {Crocedural} from "@/entities/Crocedural/ui/Crocedural"
+import { Crocedural } from "@/entities/Crocedural/ui/Crocedural"
+
 
 const savedCards = [1, 2, 3, 4, 5, 6];
 const reviews = [1, 2, 3];
+
 const tabClass = (active: boolean) =>
   clsx(
     `
@@ -41,7 +43,7 @@ const tabClass = (active: boolean) =>
 export default function ProfileTabs() {
   const [tab, setTab] = useState("history");
   const [savedTab, setSavedTab] = useState("clinics");
- 
+
   return (
     <div className="w-full overflow-hidden">
       <UserInfo />
@@ -94,7 +96,9 @@ export default function ProfileTabs() {
             >
               Клиники
             </button>
+
             <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
+
             <button
               onClick={() => setSavedTab("doctors")}
               className={clsx(
@@ -104,7 +108,9 @@ export default function ProfileTabs() {
             >
               Врачи
             </button>
+
             <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
+
             <button
               onClick={() => setSavedTab("procedures")}
               className={clsx(
@@ -139,9 +145,14 @@ export default function ProfileTabs() {
               </div>
             )}
             {savedTab === "procedures" && (
-              <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+              <div className="flex flex-col gap-4">
                 {savedCards.map((item) => (
-                  <Crocedural key={item} />
+                  <Crocedural
+                    key={item}
+                    title="УЗИ"
+                    category="Кардиология"
+                    price="1700 сом"
+                  />
                 ))}
               </div>
             )}
