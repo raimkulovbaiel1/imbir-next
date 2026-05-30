@@ -10,11 +10,12 @@ import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
 import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
 import { Crocedural } from "@/entities/Crocedural/ui/Crocedural"
 import { ReviewName } from "@/entities/ReviewName/ui/ReviewName";
+import { ReviewProcedures } from "@/entities/ReviewProcedures/ui/ReviewProcedures";
 
 const savedCards = [1, 2, 3, 4, 5, 6];
 const reviews = [1, 2, 3];
 const reviewDoctors = [1, 2, 3];
-//const reviewProcedures = [1, 2, 3];
+const reviewProcedures = [1, 2, 3];
 const tabClass = (active: boolean) =>
   clsx(
     `
@@ -174,7 +175,7 @@ export default function ProfileTabs() {
             {savedTab === "doctors" && (
               <div className="flex flex-col gap-4">
                 {reviewDoctors.map((item) => (
-                  <ReviewName  key={item}
+                  <ReviewName key={item}
                     date="02.10.2024"
                     doctor="Сыдыкбекова Асель Келдибековна"
                     clinic="MedCenter"
@@ -184,13 +185,13 @@ export default function ProfileTabs() {
                 ))}
               </div>
             )}
-            {/* {savedTab === "procedures" && (
-  <div className="flex flex-col gap-4">
-    {reviewProcedures.map((item) => (
-      <ReviewName key={item} />
-    ))}
-  </div>
-)} */}
+            {savedTab === "procedures" && (
+              <div className="flex flex-col gap-4">
+                {reviewProcedures.map((item) => (
+                  <ReviewProcedures key={item} />
+                ))}
+              </div>
+            )}
           </>
         )}
       </div>
