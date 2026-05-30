@@ -11,12 +11,10 @@ import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
 import { Crocedural } from "@/entities/Crocedural/ui/Crocedural"
 import { ReviewName } from "@/entities/ReviewName/ui/ReviewName";
 
-
 const savedCards = [1, 2, 3, 4, 5, 6];
 const reviews = [1, 2, 3];
 const reviewDoctors = [1, 2, 3];
 //const reviewProcedures = [1, 2, 3];
-
 const tabClass = (active: boolean) =>
   clsx(
     `
@@ -46,7 +44,6 @@ const tabClass = (active: boolean) =>
 export default function ProfileTabs() {
   const [tab, setTab] = useState("history");
   const [savedTab, setSavedTab] = useState("clinics");
-
   return (
     <div className="w-full overflow-hidden">
       <UserInfo />
@@ -99,9 +96,7 @@ export default function ProfileTabs() {
             >
               Клиники
             </button>
-
             <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
-
             <button
               onClick={() => setSavedTab("doctors")}
               className={clsx(
@@ -111,9 +106,7 @@ export default function ProfileTabs() {
             >
               Врачи
             </button>
-
             <div className="h-[20px] md:h-[30px] w-[2px] bg-white/40" />
-
             <button
               onClick={() => setSavedTab("procedures")}
               className={clsx(
@@ -178,7 +171,6 @@ export default function ProfileTabs() {
                 ))}
               </div>
             )}
-
             {savedTab === "doctors" && (
               <div className="flex flex-col gap-4">
                 {reviewDoctors.map((item) => (
@@ -192,7 +184,6 @@ export default function ProfileTabs() {
                 ))}
               </div>
             )}
-
             {/* {savedTab === "procedures" && (
   <div className="flex flex-col gap-4">
     {reviewProcedures.map((item) => (
