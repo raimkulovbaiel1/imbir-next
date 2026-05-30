@@ -9,10 +9,13 @@ import ReviewCard from "@/entities/review-card/ui/ReviewCard";
 import Appointment from "@/features/appointment-tabs/ui/AppointmentTabs"
 import ProcedureDoc from "@/entities/ProcedureDoc/ui/ProcedureDoc"
 import { Crocedural } from "@/entities/Crocedural/ui/Crocedural"
+import { ReviewName } from "@/entities/ReviewName/ui/ReviewName";
 
 
 const savedCards = [1, 2, 3, 4, 5, 6];
 const reviews = [1, 2, 3];
+const reviewDoctors = [1, 2, 3];
+//const reviewProcedures = [1, 2, 3];
 
 const tabClass = (active: boolean) =>
   clsx(
@@ -158,19 +161,46 @@ export default function ProfileTabs() {
             )}
           </>
         )}
+        {/* REVIEWS (ОЧЕНЬ ВАЖНО: ТОЛЬКО ОДИН БЛОК!) */}
         {tab === "reviews" && (
-          <div className="flex flex-col gap-4">
-            {reviews.map((item) => (
-              <ReviewCard
-                key={item}
-                date="02.10.2024"
-                doctor="Сыдыкбекова Асель Келдибековна"
-                clinic="MedCenter"
-                rating="5.0"
-                text="Рекомендую всем, кто ищет квалифицированного и отзывчивого специалиста!"
-              />
-            ))}
-          </div>
+          <>
+            {savedTab === "clinics" && (
+              <div className="flex flex-col gap-4">
+                {reviews.map((item) => (
+                  <ReviewCard
+                    key={item}
+                    date="02.10.2024"
+                    doctor="Клиника отзыв"
+                    clinic="MedCenter"
+                    rating="5.0"
+                    text="Рекомендую всем, кто ищет квалифицированного и отзывчивого специалиста!"
+                  />
+                ))}
+              </div>
+            )}
+
+            {savedTab === "doctors" && (
+              <div className="flex flex-col gap-4">
+                {reviewDoctors.map((item) => (
+                  <ReviewName  key={item}
+                    date="02.10.2024"
+                    doctor="Сыдыкбекова Асель Келдибековна"
+                    clinic="MedCenter"
+                    rating="5.0"
+                    text="Рекомендую всем, кто ищет квалифицированного и отзывчивого специалиста!"
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* {savedTab === "procedures" && (
+  <div className="flex flex-col gap-4">
+    {reviewProcedures.map((item) => (
+      <ReviewName key={item} />
+    ))}
+  </div>
+)} */}
+          </>
         )}
       </div>
       <UserStatus />
