@@ -54,7 +54,7 @@ export default function RegisterForm() {
       />
 
       <Button>
-        Зарегистрироваться
+        Заргистрироваться
       </Button>
     </div>
   );
