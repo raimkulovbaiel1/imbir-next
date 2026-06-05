@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import RegisterForm from "@/features/auth/ui/RegisterForm";
 import LoginForm from "@/features/auth/ui/LoginForm";
