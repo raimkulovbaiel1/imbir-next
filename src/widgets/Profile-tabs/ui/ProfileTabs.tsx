@@ -188,7 +188,14 @@ export default function ProfileTabs() {
             {savedTab === "procedures" && (
               <div className="flex flex-col gap-4">
                 {reviewProcedures.map((item) => (
-                  <ReviewProcedures key={item} />
+                    <ReviewProcedures
+                    key={item}
+                    date="02.10.2024"
+                    doctor="УЗИ брюшной полости"
+                    clinic="MedCenter, Курманбекова Айтунук "
+                    rating="5.0" 
+                    text="Рекомендую всем, кто ищет квалифицированного и отзывчивого специалиста!"
+                  />
                 ))}
               </div>
             )}
