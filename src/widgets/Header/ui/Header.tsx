@@ -44,9 +44,9 @@ export const Header = () => {
             <Image src={chat} alt="chat" width={24} height={24} />
           </button>
 
-          <button type="button">
+          <Link href="/auth" className="inline-flex items-center">
             <Image src={userIcon} alt="user" width={24} height={24} />
-          </button>
+          </Link>
         </div>
       </div>
     </header>
