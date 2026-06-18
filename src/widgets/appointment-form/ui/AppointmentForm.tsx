@@ -43,13 +43,7 @@ export default function AppointmentForm() {
 
       <div className="mt-4">
         <label
-          className="
-      block
-      mb-2
-      text-[14px]
-      text-[#0C2647]
-      font-medium
-    "
+          className=" block  mb-2   text-[14px]       text-[#0C2647]  font-medium  "
         >
           Комментарий (необязательное поле)
         </label>
