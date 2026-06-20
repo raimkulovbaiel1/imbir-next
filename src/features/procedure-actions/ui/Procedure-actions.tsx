@@ -22,7 +22,6 @@ const ProcedureActions = () => {
           text-white
           transition
           hover:bg-white/10
-
           sm:w-auto
           sm:py-1
           sm:text-[18px]
@@ -41,7 +40,6 @@ const ProcedureActions = () => {
           text-red-500
           transition
           hover:bg-red-500/10
-
           sm:w-auto
           sm:py-1
           sm:text-[18px]
