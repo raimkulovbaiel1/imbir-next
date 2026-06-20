@@ -40,7 +40,6 @@ const ProcedureCard = ({ procedure }: ProcedureCardProps) => {
             shrink-0
             overflow-hidden
             rounded-[10px]
-
             md:h-[125px]
             md:w-[125px]
             md:rounded-[12px]
