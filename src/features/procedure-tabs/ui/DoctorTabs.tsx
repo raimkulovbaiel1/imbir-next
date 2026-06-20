@@ -19,7 +19,6 @@ const DoctorTabs = () => {
         gap-1
         overflow-x-auto
         scrollbar-hide
-
         sm:gap-2
       "
     >
@@ -37,7 +36,6 @@ const DoctorTabs = () => {
               text-[11px]
               font-bold
               transition
-
               sm:rounded-t-[25px]
               sm:px-6
               sm:py-2
