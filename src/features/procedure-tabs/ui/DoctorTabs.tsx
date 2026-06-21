@@ -11,7 +11,7 @@ const DoctorTabs = () => {
     {
       id: "profile",
       label: "Мой профиль доктора",
-      href: "/my-profile",
+      href: "/My-doctors",
     },
     {
       id: "clinics",
