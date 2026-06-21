@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import clsx from "clsx";
 
@@ -7,9 +8,21 @@ const DoctorTabs = () => {
   const [activeTab, setActiveTab] = useState("procedures");
 
   const tabs = [
-    { id: "profile", label: "Мой профиль доктора" },
-    { id: "clinics", label: "Моя клиника" },
-    { id: "procedures", label: "Моя процедура" },
+    {
+      id: "profile",
+      label: "Мой профиль доктора",
+      href: "/my-profile",
+    },
+    {
+      id: "clinics",
+      label: "Моя клиника",
+      href: "/My-clinic",
+    },
+    {
+      id: "procedures",
+      label: "Моя процедура",
+      href: "/My-procedures",
+    },
   ];
 
   return (
@@ -19,12 +32,14 @@ const DoctorTabs = () => {
         gap-1
         overflow-x-auto
         scrollbar-hide
+
         sm:gap-2
       "
     >
       {tabs.map((tab) => (
-        <button
+        <Link
           key={tab.id}
+          href={tab.href}
           onClick={() => setActiveTab(tab.id)}
           className={clsx(
             `
@@ -36,6 +51,7 @@ const DoctorTabs = () => {
               text-[11px]
               font-bold
               transition
+
               sm:rounded-t-[25px]
               sm:px-6
               sm:py-2
@@ -47,7 +63,7 @@ const DoctorTabs = () => {
           )}
         >
           {tab.label}
-        </button>
+        </Link>
       ))}
     </div>
   );
