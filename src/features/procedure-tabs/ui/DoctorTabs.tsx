@@ -29,7 +29,10 @@ const DoctorTabs = () => {
     <div className="flex gap-1 overflow-x-auto scrollbar-hide sm:gap-2">
       {tabs.map((tab) => {
         const isActive =
-          pathname === tab.href || pathname.startsWith(`${tab.href}/`);
+          pathname === tab.href ||
+          pathname.startsWith(`${tab.href}/`) ||
+          (tab.id === "procedures" &&
+            pathname.startsWith("/Procedure-management"));
 
         return (
           <Link
