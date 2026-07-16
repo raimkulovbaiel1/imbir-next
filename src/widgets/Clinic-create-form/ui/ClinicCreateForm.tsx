@@ -12,11 +12,11 @@ import {
 import ClinicCalendar from "@/features/clinic-calendar/ui/ClinicCalendar";
 import ClinicPhotoUpload from "@/features/clinic-photo-upload/ui/ClinicPhotoUpload";
 import ClinicWorkSchedule from "@/features/clinic-work-schedule/ui/ClinicWorkSchedule";
-
+import ClinicUploadModal from "@/features/clinic-upload-modal/ui/ClinicUploadModal";
 const ClinicCreateForm = () => {
   const [search, setSearch] = useState("");
   const [clinicImages, setClinicImages] = useState<string[]>([]);
-
+const [isUploadOpen, setIsUploadOpen] = useState(false);
   const [selectedDoctorIds, setSelectedDoctorIds] = useState<number[]>(
     SELECTED_DOCTORS.map((doctor) => doctor.id)
   );
@@ -51,10 +51,11 @@ const ClinicCreateForm = () => {
   ) => {
     event.preventDefault();
 
-    console.log("Клиника сохранена");
+    setIsUploadOpen(true);
   };
 
-  return (
+   return (
+  <>
     <form
       onSubmit={handleSubmit}
       className="mx-auto w-full max-w-[1050px]"
@@ -273,8 +274,18 @@ const ClinicCreateForm = () => {
           </div>
         </div>
       </div>
-    </form>
-  );
+    </form> 
+
+    <ClinicUploadModal
+      open={isUploadOpen}
+      onClose={() => setIsUploadOpen(false)}
+      onUpload={() => {
+        console.log("Загрузка");
+        setIsUploadOpen(false);
+      }}
+    />
+  </>
+);
 };
 
 export default ClinicCreateForm;
