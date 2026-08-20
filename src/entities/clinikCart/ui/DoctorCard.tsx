@@ -8,7 +8,8 @@ interface Props {
 
 export const DoctorCard = ({ src, active, onClick }: Props) => {
   return (
-    <div
+    <div 
+    
       onClick={onClick}
       className={`w-14 h-14 rounded-md overflow-hidden cursor-pointer border ${
         active ? "border-[#35B4E8]" : "border-transparent"

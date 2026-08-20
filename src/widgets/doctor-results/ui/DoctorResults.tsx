@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DoctorCard from "@/entities/doctor/ui/DoctorCard";
 import doctor1 from "@/shared/assets/img/Doc/docer.png";
 
@@ -6,19 +7,19 @@ const doctors = [
     id: 1,
     image: doctor1.src,
     name: "Кадыркулов Нурлан",
-    profession: "Хирург",
+    profession: "врач ортопед",
   },
   {
     id: 2,
     image: doctor1.src,
     name: "Кадыркулов Нурлан",
-    profession: "Хирург",
+    profession: "врач ортопед",
   },
   {
     id: 3,
     image: doctor1.src,
     name: "Кадыркулов Нурлан",
-    profession: "врач ортопед",
+    profession: "врач лор",
   },
   {
     id: 4,
@@ -44,12 +45,17 @@ export default function DoctorResults() {
   return (
     <div className="mt-10 grid grid-cols-2 justify-items-center gap-x-[30px] gap-y-[40px] sm:grid-cols-2 lg:grid-cols-3">
       {doctors.map((doctor) => (
-        <DoctorCard
+        <Link
           key={doctor.id}
-          image={doctor.image}
-          name={doctor.name}
-          profession={doctor.profession}
-        />
+          href={`/doctor-anketa/${doctor.id}`}
+          className="block w-full"
+        >
+          <DoctorCard
+            image={doctor.image}
+            name={doctor.name}
+            profession={doctor.profession}
+          />
+        </Link>
       ))}
     </div>
   );
