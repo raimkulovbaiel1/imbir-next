@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import DoctorSlider from "@/features/doctor-slider/ui/DoctorSlider";
 import { Button } from "@/shared/ui/Button";
 import med from "@/shared/assets/logo/ClinicProfile/med.svg"
@@ -23,21 +25,25 @@ export default function HeroMedical() {
           </p>
 
           <div className="mt-6 flex flex-col gap-3">
-            <Button
-              variant="secondary"
-              className="cursor-pointer flex items-center gap-2"
-            >
-              <img src={cld.src} alt="logo" />
-              Записаться на оффлайн консультацию
-            </Button>
+            <Link href="/Appointment">
+              <Button
+                variant="secondary"
+                className="cursor-pointer flex items-center gap-2"
+              >
+                <img src={cld.src} alt="logo" />
+                Записаться на оффлайн консультацию
+              </Button>
+            </Link>  
 
+            <Link href="/Appointment">
             <Button
               className="cursor-pointer flex items-center gap-2"
             >
               <img src={online.src} alt="logo" />
               Записаться на онлайн консультацию
-            </Button>
-          </div>
+            </Button> 
+            </Link>
+          </div> 
 
           {/* INFO */}
           <div className="mt-6 grid grid-cols-2 gap-4 text-[#0C2647] text-[16px]">
