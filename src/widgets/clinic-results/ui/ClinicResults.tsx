@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 import ClinicCard from "@/entities/clinic/ui/ClinicCard";
+
 import logo1 from "@/shared/assets/img/Clinic/logo1.png";
 import logo2 from "@/shared/assets/img/Clinic/logo2.png";
 import logo3 from "@/shared/assets/img/Clinic/logo3.png";
@@ -82,14 +85,19 @@ export default function ClinicResults() {
   return (
     <div className="mt-6 grid grid-cols-2 justify-items-center gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {clinics.map((clinic) => (
-        <ClinicCard
+        <Link
           key={clinic.id}
-          image={clinic.image}
-          title={clinic.title}
-          address={clinic.address}
-          borderColor={clinic.borderColor}
-          bgColor={clinic.bgColor}
-        />
+          href={`/clinic-profile/${clinic.id}`}
+          className="block w-full"
+        >
+          <ClinicCard
+            image={clinic.image}
+            title={clinic.title}
+            address={clinic.address}
+            borderColor={clinic.borderColor}
+            bgColor={clinic.bgColor}
+          />
+        </Link>
       ))}
     </div>
   );
