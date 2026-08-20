@@ -1,1 +1,1 @@
-export {MedicalCa8rds} from './ui/MedicalCards';
+export { default } from './ui/MedicalCards';``
