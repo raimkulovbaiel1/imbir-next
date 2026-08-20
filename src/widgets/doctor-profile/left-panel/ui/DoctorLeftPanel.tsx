@@ -9,11 +9,13 @@ export default function DoctorLeftPanel() {
       <DoctorScheduleCard
         title="График работы врача"
         buttonText="Записаться на онлайн консультацию"
+        href="/Appointment"
       />
 
       <DoctorScheduleCard
         title="Оффлайн прием"
         buttonText="Записаться на оффлайн консультацию"
+        href="/Appointment"
       />
     </div>
   );
