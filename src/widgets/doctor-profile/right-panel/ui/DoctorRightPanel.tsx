@@ -43,7 +43,7 @@ export default function DoctorRightPanel() {
         </div>
       </div>
 
-      <div className="my-8 border-t-2 border-dashed border-[#35B4E8]" />
+      <div className="my-8 border-t-2  border-dashed border-[#35B4E8]" />
 
       <div>
         <h2 className="text-[18px]  font-semibold mt-10 text-[#0C2647]">
