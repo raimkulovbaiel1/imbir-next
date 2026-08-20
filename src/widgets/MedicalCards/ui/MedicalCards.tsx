@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
+
 import logo1 from "@/shared/assets/logo/MedicalCards/logo1.svg";
 import logo2 from "@/shared/assets/logo/MedicalCards/logo2.svg";
 import logo3 from "@/shared/assets/logo/MedicalCards/logo3.svg";
@@ -10,16 +12,19 @@ const cards = [
     id: 1,
     title: "Клиники",
     image: logo1,
+    href: "/clinic",
   },
   {
     id: 2,
     title: "Врачи",
     image: logo2,
+    href: "/Doctors",
   },
   {
     id: 3,
     title: "Процедуры",
     image: logo3,
+    href: "/procedures",
   },
 ];
 
@@ -35,7 +40,7 @@ export default function MedicalCards() {
             <div className="absolute right-0 top-0 h-[60px] w-[55px] rounded-bl-[14px] bg-white" />
 
             <div className="relative z-10 flex h-full flex-col">
-              <div className="flex h-[60px] w-[60px] items-center justify-center rounded-full ">
+              <div className="flex h-[60px] w-[60px] items-center justify-center rounded-full">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -44,16 +49,21 @@ export default function MedicalCards() {
                 />
               </div>
 
-              <h3 className="mt-6 text-[30px] font-bold leading-none text-white">
+              {/* TITLE — теперь это ссылка */}
+              <Link
+                href={item.href}
+                className="mt-6 block w-fit text-[30px] font-bold leading-none text-white hover:underline"
+              >
                 {item.title}
-              </h3>
+              </Link>
 
-              <button className="mt-auto w-fit rounded-full bg-[#F2F2F2] px-4 py-[6px] text-[16px] font-medium text-[#1E1E1E] transition hover:bg-white">
+              <Link
+                href={item.href}
+                className="mt-auto w-fit rounded-full bg-[#F2F2F2] px-4 py-[6px] text-[16px] font-medium text-[#1E1E1E] transition hover:bg-white"
+              >
                 Подробнее
-              </button>
+              </Link>
             </div>
-
-
           </div>
         ))}
       </div>
