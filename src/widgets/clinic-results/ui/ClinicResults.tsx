@@ -1,3 +1,5 @@
+"use client";
+import { Search } from "lucide-react";
 import Link from "next/link";
 
 import ClinicCard from "@/entities/clinic/ui/ClinicCard";
@@ -81,24 +83,47 @@ const clinics = [
   },
 ];
 
-export default function ClinicResults() {
+type ClinicResultsProps = {
+  search?: string;
+};
+
+export default function ClinicResults({
+  search = "",
+}: ClinicResultsProps) {
+  const query = search.toLowerCase().trim();
+
+  const filteredClinics = clinics.filter((clinic) => {
+    return (
+      clinic.title.toLowerCase().includes(query) ||
+      clinic.address.toLowerCase().includes(query)
+    );
+  });
+
   return (
-    <div className="mt-6 grid grid-cols-2 justify-items-center gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-      {clinics.map((clinic) => (
-        <Link
-          key={clinic.id}
-          href={`/clinic-profile/${clinic.id}`}
-          className="block w-full"
-        >
-          <ClinicCard
-            image={clinic.image}
-            title={clinic.title}
-            address={clinic.address}
-            borderColor={clinic.borderColor}
-            bgColor={clinic.bgColor}
-          />
-        </Link>
-      ))}
-    </div>
+    <>
+      <div className="mt-6 grid grid-cols-2 justify-items-center gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        {filteredClinics.map((clinic) => (
+          <Link
+            key={clinic.id}
+            href={`/clinic-profile/${clinic.id}`}
+            className="block w-full"
+          >
+            <ClinicCard
+              image={clinic.image}
+              title={clinic.title}
+              address={clinic.address}
+              borderColor={clinic.borderColor}
+              bgColor={clinic.bgColor}
+            />
+          </Link>
+        ))}
+      </div>
+
+      {filteredClinics.length === 0 && (
+        <p className="mt-10 text-center text-[#0C2647]">
+          Клиника не найдена
+        </p>
+      )}
+    </>
   );
 }

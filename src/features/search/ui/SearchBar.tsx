@@ -18,7 +18,7 @@ export default function SearchBar({
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="Введите свой запрос"
+          placeholder="Введите свой  запрос"
           className="h-full w-full bg-transparent text-[24px] font-Montserrat text-white outline-none placeholder:text-white/90"
         />
 
